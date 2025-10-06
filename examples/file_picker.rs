@@ -1,14 +1,16 @@
 use iced::widget::{column, container, text};
-use iced::{Element, Length, Task, Theme};
-use iced_fonts::{Nerd, NERD_FONT, NERD_FONT_BYTES};
-use iced_picker::{picker, PickerItem};
+use iced::{Element, Font, Length, Task, Theme};
+use iced_fonts::{NERD_FONT_BYTES, Nerd};
+use iced_picker::{PickerItem, picker};
 use std::collections::HashMap;
 use std::fs;
 use std::path::{Path, PathBuf};
 
+const NERD_FONT: Font = Font::with_name("Symbols Nerd Font");
+
 pub fn main() -> iced::Result {
-    iced::application("File Picker Example", update, view)
-        .theme(|_| Theme::Dracula)
+    iced::application(State::default, update, view)
+        .theme(Theme::Dracula)
         .font(NERD_FONT_BYTES)
         .run()
 }

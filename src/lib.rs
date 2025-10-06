@@ -1,4 +1,4 @@
-use iced::widget::{button, container, row, scrollable, text, Column, Space};
+use iced::widget::{Column, Space, button, container, row, scrollable, text};
 use iced::{Alignment, Color, Element, Font, Length, Padding, Theme};
 use std::collections::HashMap;
 use std::hash::Hash;
@@ -95,24 +95,28 @@ fn render_item<'a, Message: Clone + 'a, Id: Clone + Eq + Hash + 'a>(
                         text_color: palette.background.base.text,
                         border: iced::Border::default(),
                         shadow: iced::Shadow::default(),
+                        snap: Default::default(),
                     },
                     button::Status::Hovered => button::Style {
                         background: Some(iced::Background::Color(palette.background.weak.color)),
                         text_color: palette.background.base.text,
                         border: iced::Border::default(),
                         shadow: iced::Shadow::default(),
+                        snap: Default::default(),
                     },
                     button::Status::Pressed => button::Style {
                         background: Some(iced::Background::Color(palette.background.strong.color)),
                         text_color: palette.background.base.text,
                         border: iced::Border::default(),
                         shadow: iced::Shadow::default(),
+                        snap: Default::default(),
                     },
                     button::Status::Disabled => button::Style {
                         background: None,
                         text_color: Color::from_rgb(0.5, 0.5, 0.5),
                         border: iced::Border::default(),
                         shadow: iced::Shadow::default(),
+                        snap: Default::default(),
                     },
                 }
             })
@@ -125,6 +129,7 @@ fn render_item<'a, Message: Clone + 'a, Id: Clone + Eq + Hash + 'a>(
                 text_color: Color::TRANSPARENT,
                 border: iced::Border::default(),
                 shadow: iced::Shadow::default(),
+                snap: Default::default(),
             })
     };
 

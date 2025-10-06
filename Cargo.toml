@@ -1,14 +1,10 @@
 [package]
 name    = "iced_picker"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
-iced = "0.13"
+iced     = { git = "https://github.com/iced-rs/iced", rev = "a9091f9" }
 
 [dev-dependencies]
 iced_fonts = { version = "0.2.1", features = ["nerd"] }
-
-[[example]]
-name = "file_picker"
-path = "src/examples/file_picker.rs"
